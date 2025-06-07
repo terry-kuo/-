@@ -1,3 +1,4 @@
+```python
 import difflib
 import jieba
 from pypinyin import lazy_pinyin
