@@ -1,12 +1,8 @@
-```python
 import difflib
 import jieba
-from pypinyin import lazy_pinyin
-
 def load_english_dict(file):
     with open(file, 'r', encoding='utf-8') as f:
         return [line.strip().lower() for line in f.readlines()]
-
 common_typos_zh = {
     "蘋裡": "蘋果",
     "覺得的": "覺得",
@@ -18,7 +14,7 @@ def is_english_word(word):
     return all(ord(c) < 128 and c.isalpha() for c in word)
 
 def correct_english(word, dictionary):
-    matches = difflib.get_close_matches(word.lower(), dictionary, n=1, cutoff=0.8)
+    matches = difflib.get_close_matches(word.lower(), dictionary, n=1, cutoff=0.😎
     return matches[0] if matches else word
 
 def correct_chinese(sentence):
